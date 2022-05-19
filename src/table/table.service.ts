@@ -32,5 +32,10 @@ const data: Partial<Table> = {...dto}
       data
     })
   }
+  async delete(id: string) {
+    await this.prisma.table.delete({
+      where: { id }
+    })
+  }
 
 }
