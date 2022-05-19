@@ -6,7 +6,7 @@ import { TableService } from "./table.service";
 @ApiTags('Table')
 @Controller('table')
 export class TableController {
-  constructor( private tableService: TableService) {}
+  constructor( private readonly tableService: TableService) {}
 
   @Get()
   findAll() {
@@ -15,7 +15,7 @@ export class TableController {
   }
 
   @Post()
-  create(@Body() createTableDto: CreateTableDto) {
-    return this.tableService.create(createTableDto);
+  create(@Body() dto: CreateTableDto) {
+    return this.tableService.create(dto);
   }
 }
